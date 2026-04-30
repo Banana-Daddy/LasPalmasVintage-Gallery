@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Las Palmas Vintage — Five Concept Directions</title>
+<meta name="description" content="Five distinct concept directions for the Las Palmas Vintage website — pick a favorite and leave feedback.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Las Palmas Vintage — Concept Gallery">
+<meta property="og:title" content="Las Palmas Vintage — Five Concept Directions">
+<meta property="og:description" content="Five distinct concept directions for the website. Pick a favorite. Leave feedback.">
+<meta property="og:url" content="https://banana-daddy.github.io/LasPalmasVintage-Gallery/">
+<meta property="og:image" content="https://banana-daddy.github.io/LasPalmasVintage-Gallery/images/og.jpg">
+<meta property="og:image:secure_url" content="https://banana-daddy.github.io/LasPalmasVintage-Gallery/images/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A 1962 vintage WPA-style travel poster of Las Palmas Vintage with sun rays, palm silhouettes, and mid-century architecture">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Las Palmas Vintage — Five Concept Directions">
+<meta name="twitter:description" content="Five distinct concept directions for the website. Pick a favorite. Leave feedback.">
+<meta name="twitter:image" content="https://banana-daddy.github.io/LasPalmasVintage-Gallery/images/og.jpg">
+
+<!-- Theme + favicon + canonical -->
+<meta name="theme-color" content="#F4F1EC">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" sizes="512x512" href="images/favicon-512.png">
+<link rel="canonical" href="https://banana-daddy.github.io/LasPalmasVintage-Gallery/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper:    #FAF7F0;
+  --paper-2:  #F1EBDD;
+  --ink:      #18181B;
+  --grey:     #52525B;
+  --grey-2:   #A1A1AA;
+  --terra:    #C8593F;
+  --terra-deep: #9A4530;
+  --rule:     rgba(24, 24, 27, 0.12);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+.serif { font-family: 'Playfair Display', Georgia, serif; }
+.italic { font-style: italic; }
+.upper { text-transform: uppercase; letter-spacing: 0.18em; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  padding: 3rem 1.5rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+.header-meta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.65rem; letter-spacing: 0.32em; text-transform: uppercase;
+  font-weight: 500; color: var(--terra);
+  padding: 4px 12px;
+  border: 1px solid var(--terra);
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+}
+.header-meta::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--terra);
+  box-shadow: 0 0 0 3px rgba(200, 89, 63, 0.18);
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-weight: 400;
+  font-size: clamp(2.6rem, 9vw, 4.8rem);
+  line-height: 1; letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 18ch;
+  margin: 0 auto;
+}
+.header-title .accent { color: var(--terra); }
+.header-sub {
+  margin-top: 1.25rem;
+  max-width: 540px;
+  margin-left: auto; margin-right: auto;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--grey);
+}
+.header-meta-line {
+  margin-top: 1.5rem;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem;
+  font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-2);
+  font-weight: 500;
+}
+.header-meta-line span:not(:last-child)::after {
+  content: '·'; margin-left: 1rem; color: var(--grey-2);
+}
+
+/* ============================================
+   GALLERY
+   ============================================ */
+.gallery {
+  padding: 3rem 1.25rem 2rem;
+  max-width: 1200px; margin: 0 auto;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+.direction-card {
+  display: flex; flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s;
+  text-decoration: none;
+  color: inherit;
+}
+.direction-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -16px rgba(24,24,27,0.18); }
+
+.direction-img-wrap {
+  position: relative;
+  aspect-ratio: 1200 / 630;
+  background: var(--paper-2);
+  overflow: hidden;
+  border-bottom: 1px solid var(--rule);
+}
+.direction-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.direction-card:hover .direction-img-wrap img { transform: scale(1.04); }
+
+.direction-num {
+  position: absolute; top: 14px; left: 14px;
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+  font-size: 1.1rem;
+  background: rgba(250, 247, 240, 0.92);
+  color: var(--ink);
+  padding: 2px 10px;
+  border-radius: 9999px;
+  backdrop-filter: blur(6px);
+}
+
+.direction-info {
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.direction-eyebrow {
+  font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--terra); font-weight: 600;
+}
+.direction-title {
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;
+  font-size: 1.65rem; line-height: 1.05; letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.direction-desc {
+  font-size: 0.95rem; line-height: 1.55;
+  color: var(--grey);
+}
+.direction-link-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
+}
+.direction-link-row .open {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--terra);
+}
+.direction-link-row .open:hover { color: var(--terra-deep); }
+.direction-link-row .open svg { width: 12px; height: 12px; }
+
+/* ============================================
+   FEEDBACK
+   ============================================ */
+.feedback {
+  margin-top: 2rem;
+  padding: 4rem 1.25rem 4rem;
+  background: var(--ink); color: var(--paper);
+}
+.feedback-inner {
+  max-width: 720px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+.feedback-eyebrow {
+  font-size: 0.65rem; letter-spacing: 0.32em; text-transform: uppercase;
+  font-weight: 600; color: var(--terra);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.feedback-eyebrow::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--terra);
+}
+
+.feedback-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-weight: 400;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.05; letter-spacing: -0.02em;
+  color: var(--paper);
+}
+.feedback-title .accent { color: var(--terra); }
+
+.feedback-sub {
+  font-size: 0.95rem; line-height: 1.6;
+  color: rgba(250, 247, 240, 0.65);
+  max-width: 520px;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-label {
+  font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
+  font-weight: 600; color: var(--terra);
+}
+.form-radio-group {
+  display: grid; grid-template-columns: 1fr; gap: 6px;
+}
+.form-radio {
+  position: relative;
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px;
+  background: rgba(250, 247, 240, 0.04);
+  border: 1px solid rgba(250, 247, 240, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.form-radio:hover { background: rgba(250, 247, 240, 0.08); }
+.form-radio input { position: absolute; opacity: 0; pointer-events: none; }
+.form-radio .dot {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--paper);
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.form-radio .dot::after {
+  content: '';
+  position: absolute; inset: 3px;
+  border-radius: 50%; background: var(--terra);
+  transform: scale(0);
+  transition: transform 0.2s;
+}
+.form-radio input:checked ~ .dot { border-color: var(--terra); }
+.form-radio input:checked ~ .dot::after { transform: scale(1); }
+.form-radio input:checked + .dot ~ .label-row .name { color: var(--terra); }
+.form-radio:has(input:checked) { background: rgba(200, 89, 63, 0.12); border-color: var(--terra); }
+.form-radio .label-row { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.form-radio .label-row .name { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; font-size: 1.05rem; color: var(--paper); transition: color 0.2s; }
+.form-radio .label-row .desc { font-size: 0.78rem; color: rgba(250, 247, 240, 0.55); }
+
+.form-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 14px;
+  background: rgba(250, 247, 240, 0.04);
+  border: 1px solid rgba(250, 247, 240, 0.15);
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--paper);
+  resize: vertical;
+}
+.form-textarea::placeholder { color: rgba(250, 247, 240, 0.35); }
+.form-textarea:focus { outline: none; border-color: var(--terra); background: rgba(200, 89, 63, 0.08); }
+
+.form-input {
+  width: 100%;
+  padding: 11px 14px;
+  background: rgba(250, 247, 240, 0.04);
+  border: 1px solid rgba(250, 247, 240, 0.15);
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: var(--paper);
+}
+.form-input::placeholder { color: rgba(250, 247, 240, 0.35); }
+.form-input:focus { outline: none; border-color: var(--terra); background: rgba(200, 89, 63, 0.08); }
+
+.form-actions {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+  margin-top: 0.5rem;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 24px;
+  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.25s, color 0.25s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-terra   { background: var(--terra); color: var(--paper); box-shadow: 0 12px 32px -10px rgba(200, 89, 63, 0.6); }
+.btn-terra:hover { background: var(--terra-deep); }
+.btn-ghost   { background: transparent; color: var(--paper); border-color: rgba(250, 247, 240, 0.25); }
+.btn-ghost:hover { background: rgba(250, 247, 240, 0.06); border-color: rgba(250, 247, 240, 0.5); }
+.btn .arrow { width: 14px; height: 14px; }
+
+.form-tiny {
+  font-size: 0.72rem; color: rgba(250, 247, 240, 0.45);
+  line-height: 1.55;
+}
+.form-tiny a { color: var(--terra); text-decoration: underline; text-underline-offset: 3px; }
+
+.form-success {
+  display: none;
+  background: rgba(200, 89, 63, 0.15);
+  border: 1px solid var(--terra);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 1.1rem;
+  color: var(--paper);
+}
+.form-success.visible { display: block; }
+.form-success .check { color: var(--terra); margin-right: 8px; }
+
+/* ============================================
+   CREDIT
+   ============================================ */
+.bb-credit {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  font-size: 0.7rem; letter-spacing: 0.05em;
+  background: var(--ink); color: var(--paper);
+  opacity: 0.5;
+  border-top: 1px solid rgba(250, 247, 240, 0.08);
+}
+.bb-credit a { color: inherit; }
+
+/* ============================================
+   DESKTOP
+   ============================================ */
+@media (min-width: 720px) {
+  .header { padding: 4.5rem 2rem 1.5rem; }
+  .gallery { padding: 4rem 2rem 3rem; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .direction-card.featured { grid-column: 1 / -1; }
+  .direction-card.featured .direction-img-wrap { aspect-ratio: 21 / 9; }
+  .feedback { padding: 5rem 2rem; }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .direction-card.featured { grid-column: span 3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <span class="header-meta">For Review · Spring '26</span>
+  <h1 class="header-title">
+    Las Palmas <em class="italic accent">Vintage.</em>
+  </h1>
+  <p class="header-sub">
+    Five fully different concept directions for the website. Click each to view the full live mockup, then leave feedback below — we'll narrow down to the one you love and build it for real.
+  </p>
+  <div class="header-meta-line">
+    <span>5 directions</span>
+    <span>Mobile-optimized</span>
+    <span>Real Shopify products</span>
+  </div>
+</header>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery">
+  <div class="gallery-grid">
+
+    <!-- 1. Original Neon -->
+    <a href="https://banana-daddy.github.io/LasPalmasVintage/" target="_blank" rel="noopener" class="direction-card">
+      <div class="direction-img-wrap">
+        <span class="direction-num">01</span>
+        <img src="https://images.squarespace-cdn.com/content/v1/643e9128ba509b709a6dca09/9db98c01-d7fa-494b-baee-8082e9d688bb/87A4EF3D-9678-49F6-AB09-228222DB123C.PNG?format=1500w" alt="Las Palmas Vintage neon sign on a purple-to-peach gradient hero" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(180deg,#2D1B69,#FF2D87)';this.style.display='none'">
+      </div>
+      <div class="direction-info">
+        <span class="direction-eyebrow">The Original</span>
+        <h3 class="direction-title">Neon Glamour.</h3>
+        <p class="direction-desc">Purple-to-peach desert gradient with the existing neon sign as the hero. Marquee of designer names. The first take, anchored to your current brand assets.</p>
+        <div class="direction-link-row">
+          <span class="open">View live
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2. Pro-Max Editorial -->
+    <a href="https://banana-daddy.github.io/LasPalmasVintage-PROMAX/" target="_blank" rel="noopener" class="direction-card">
+      <div class="direction-img-wrap">
+        <span class="direction-num">02</span>
+        <img src="images/thumb-promax.jpg" alt="A woman in a sequined evening gown by a Palm Springs pool at golden hour" loading="lazy">
+      </div>
+      <div class="direction-info">
+        <span class="direction-eyebrow">Editorial Luxury</span>
+        <h3 class="direction-title">Liquid Glass Editorial.</h3>
+        <p class="direction-desc">Vogue magazine cover composition. Oversized italic typography over a Slim-Aarons-style hero, hot pink accents, magazine-spread layout, restrained luxury archive feel.</p>
+        <div class="direction-link-row">
+          <span class="open">View live
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 3. Frontend-FX Scrapbook -->
+    <a href="https://banana-daddy.github.io/LasPalmasVintage-FRONTENDFX/" target="_blank" rel="noopener" class="direction-card">
+      <div class="direction-img-wrap">
+        <span class="direction-num">03</span>
+        <img src="images/thumb-frontendfx.jpg" alt="A woman in a 1970s pink polka-dot maxi dress and straw hat in front of a pink stucco wall" loading="lazy">
+      </div>
+      <div class="direction-info">
+        <span class="direction-eyebrow">Maximalist Fun</span>
+        <h3 class="direction-title">Sun-Drenched Scrapbook.</h3>
+        <p class="direction-desc">1970s Palm Springs maximalist. Polaroid product cards with handwritten captions, hibiscus wallpaper, postcard CTAs, terracotta + mustard + palm-green palette.</p>
+        <div class="direction-link-row">
+          <span class="open">View live
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 4. Atomic Lounge -->
+    <a href="https://banana-daddy.github.io/LasPalmasVintage-ATOMIC/" target="_blank" rel="noopener" class="direction-card">
+      <div class="direction-img-wrap">
+        <span class="direction-num">04</span>
+        <img src="images/thumb-atomic.jpg" alt="A flat-vector Shag-style illustration of a 1962 Palm Springs cocktail party scene" loading="lazy">
+      </div>
+      <div class="direction-info">
+        <span class="direction-eyebrow">Mid-century Illustration</span>
+        <h3 class="direction-title">The Atomic Lounge.</h3>
+        <p class="direction-desc">A 1962 cocktail party rendered entirely in flat-vector Shag-style illustration. Atomic palette — burnt orange, avocado, mustard, teal, ivory. Sip slow. Stay late.</p>
+        <div class="direction-link-row">
+          <span class="open">View live
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5. Travel Poster -->
+    <a href="https://banana-daddy.github.io/LasPalmasVintage-TRAVELPOSTER/" target="_blank" rel="noopener" class="direction-card featured">
+      <div class="direction-img-wrap">
+        <span class="direction-num">05</span>
+        <img src="images/thumb-travelposter.jpg" alt="A 1962 vintage WPA-style travel poster of Las Palmas Vintage with sun rays, palm silhouettes, and mid-century architecture" loading="lazy">
+      </div>
+      <div class="direction-info">
+        <span class="direction-eyebrow">Vintage Tourism</span>
+        <h3 class="direction-title">A California Destination.</h3>
+        <p class="direction-desc">The brand as a 1962 California travel destination. Three full WPA-style screen-printed travel posters as section dividers — Las Palmas, Desert Modern, Aerial Tramway. Ticket-stub footer.</p>
+        <div class="direction-link-row">
+          <span class="open">View live
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ===== FEEDBACK ===== -->
+<section class="feedback" id="feedback">
+  <div class="feedback-inner">
+
+    <span class="feedback-eyebrow">Tell us what you think</span>
+    <h2 class="feedback-title">Pick a favorite. <span class="accent italic">Or two.</span></h2>
+    <p class="feedback-sub">
+      Which direction are you drawn to? What's working, what isn't, and what should we explore further? Your reply texts straight to Zack's phone.
+    </p>
+
+    <form id="feedbackForm" action="https://formsubmit.co/2147555233@vzwpix.com" method="POST">
+      <!-- formsubmit config: forward to Zack as email + skip captcha + custom subject -->
+      <input type="hidden" name="_subject" value="Las Palmas Vintage feedback">
+      <input type="hidden" name="_cc" value="zack@zballantine.com">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="basic">
+      <input type="hidden" name="_next" value="https://banana-daddy.github.io/LasPalmasVintage-Gallery/?sent=1">
+      <!-- honeypot -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="form-group" style="margin-top: 1rem;">
+        <label class="form-label">Your favorite direction (optional)</label>
+        <div class="form-radio-group">
+
+          <label class="form-radio">
+            <input type="radio" name="favorite" value="01 — Neon Glamour (Original)">
+            <span class="dot"></span>
+            <span class="label-row">
+              <span class="name">01 — Neon Glamour</span>
+              <span class="desc">Purple-to-peach gradient with the existing neon sign hero</span>
+            </span>
+          </label>
+
+          <label class="form-radio">
+            <input type="radio" name="favorite" value="02 — Liquid Glass Editorial">
+            <span class="dot"></span>
+            <span class="label-row">
+              <span class="name">02 — Liquid Glass Editorial</span>
+              <span class="desc">Vogue cover composition with oversized italic Playfair</span>
+            </span>
+          </label>
+
+          <label class="form-radio">
+            <input type="radio" name="favorite" value="03 — Sun-Drenched Scrapbook">
+            <span class="dot"></span>
+            <span class="label-row">
+              <span class="name">03 — Sun-Drenched Scrapbook</span>
+              <span class="desc">Polaroid product cards, hibiscus wallpaper, postcard closing</span>
+            </span>
+          </label>
+
+          <label class="form-radio">
+            <input type="radio" name="favorite" value="04 — The Atomic Lounge">
+            <span class="dot"></span>
+            <span class="label-row">
+              <span class="name">04 — The Atomic Lounge</span>
+              <span class="desc">Shag-style flat-vector mid-century illustration</span>
+            </span>
+          </label>
+
+          <label class="form-radio">
+            <input type="radio" name="favorite" value="05 — A California Destination">
+            <span class="dot"></span>
+            <span class="label-row">
+              <span class="name">05 — A California Destination</span>
+              <span class="desc">1962 WPA travel posters as section dividers</span>
+            </span>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-top: 1rem;">
+        <label class="form-label" for="feedback">Your thoughts</label>
+        <textarea id="feedback" name="feedback" class="form-textarea" placeholder="What's working? What isn't? What should we push further? Anything goes." required></textarea>
+      </div>
+
+      <div class="form-group" style="margin-top: 0.5rem;">
+        <label class="form-label" for="name">Your name (optional)</label>
+        <input id="name" name="name" type="text" class="form-input" placeholder="So Zack knows who's writing">
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-terra">
+          Send to Zack
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <a href="#" id="smsBtn" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Or text him directly
+        </a>
+      </div>
+
+      <p class="form-tiny" style="margin-top: 0.75rem;">
+        Submitting sends your feedback as a text message to Zack at (214)&nbsp;755-5233 and as a backup email to zack@zballantine.com. Want to follow up directly? <a href="mailto:zack@zballantine.com">Email Zack</a>.
+      </p>
+
+      <div class="form-success" id="formSuccess">
+        <span class="check">✓</span> Sent. Zack just got it. He'll be in touch.
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<!-- ===== BANANA BYTES CREDIT ===== -->
+<div class="bb-credit">
+  <a href="https://instagram.com/BananaCares" target="_blank" rel="noopener">Mockups created by Banana Bytes</a>
+</div>
+
+<script>
+(() => {
+  // SMS direct button — populates with the form's current state
+  const smsBtn = document.getElementById('smsBtn');
+  const form = document.getElementById('feedbackForm');
+  smsBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const fav = form.querySelector('input[name="favorite"]:checked')?.value || '';
+    const fb = form.querySelector('#feedback').value || '';
+    const name = form.querySelector('#name').value || '';
+    const lines = ['Las Palmas Vintage feedback'];
+    if (fav) lines.push('Favorite: ' + fav);
+    if (fb) lines.push(fb);
+    if (name) lines.push('— ' + name);
+    const body = encodeURIComponent(lines.join('\n\n'));
+    window.location.href = 'sms:+12147555233?&body=' + body;
+  });
+
+  // Show success state if redirected back from formsubmit with ?sent=1
+  if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    document.getElementById('formSuccess').classList.add('visible');
+    document.getElementById('feedbackForm').scrollIntoView({behavior: 'smooth', block: 'center'});
+    // Clear the URL param so refresh doesn't keep showing it
+    history.replaceState({}, '', window.location.pathname);
+  }
+})();
+</script>
+
+</body>
+</html>
