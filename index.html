@@ -502,20 +502,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     <span class="feedback-eyebrow">Tell us what you think</span>
     <h2 class="feedback-title">Pick a favorite. <span class="accent italic">Or two.</span></h2>
     <p class="feedback-sub">
-      Which direction are you drawn to? What's working, what isn't, and what should we explore further? Your reply texts straight to Zack's phone.
+      Which direction are you drawn to? What's working, what isn't, and what should we explore further? Hit send and your phone will text it straight to Zack.
     </p>
 
-    <form id="feedbackForm" action="https://formsubmit.co/zack@zballantine.com" method="POST">
-      <!-- formsubmit config: confirmation goes to zack's real email (the only address that reliably delivers).
-           AT&T email-to-SMS gateways are CC'd as a best-effort SMS path; many carriers silently drop these
-           since 2024, so email is the source of truth. -->
-      <input type="hidden" name="_subject" value="Las Palmas Vintage feedback">
-      <input type="hidden" name="_cc" value="2147555233@mms.att.net,2147555233@txt.att.net">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="basic">
-      <input type="hidden" name="_next" value="https://banana-daddy.github.io/LasPalmasVintage-Gallery/?sent=1">
-      <!-- honeypot -->
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <form id="feedbackForm" onsubmit="return false;">
 
       <div class="form-group" style="margin-top: 1rem;">
         <label class="form-label">Your favorite direction (optional)</label>
@@ -580,23 +570,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
       </div>
 
       <div class="form-actions">
-        <button type="submit" class="btn btn-terra">
-          Send to Zack
-          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-        <a href="#" id="smsBtn" class="btn btn-ghost">
+        <button type="button" id="sendBtn" class="btn btn-terra">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Or text him directly
-        </a>
+          Text it to Zack
+        </button>
       </div>
 
       <p class="form-tiny" style="margin-top: 0.75rem;">
-        Submitting sends your feedback as a text message to Zack at (214)&nbsp;755-5233 and as a backup email to zack@zballantine.com. Want to follow up directly? <a href="mailto:zack@zballantine.com">Email Zack</a>.
+        This opens your phone's text-message app with your feedback prefilled, addressed to Zack at (214)&nbsp;755-5233. Just hit send.
       </p>
-
-      <div class="form-success" id="formSuccess">
-        <span class="check">✓</span> Sent. Zack just got it. He'll be in touch.
-      </div>
     </form>
 
   </div>
@@ -609,29 +591,32 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 <script>
 (() => {
-  // SMS direct button — populates with the form's current state
-  const smsBtn = document.getElementById('smsBtn');
+  // Open SMS app with the form fields prefilled.
+  // Use ?body= on iOS/macOS and &body= on Android — both forms work on iOS, Android needs &.
+  const sendBtn = document.getElementById('sendBtn');
   const form = document.getElementById('feedbackForm');
-  smsBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+  sendBtn.addEventListener('click', () => {
     const fav = form.querySelector('input[name="favorite"]:checked')?.value || '';
-    const fb = form.querySelector('#feedback').value || '';
-    const name = form.querySelector('#name').value || '';
+    const fb = form.querySelector('#feedback').value.trim();
+    const name = form.querySelector('#name').value.trim();
+
+    if (!fb) {
+      const ta = form.querySelector('#feedback');
+      ta.focus();
+      ta.style.borderColor = 'var(--terra)';
+      return;
+    }
+
     const lines = ['Las Palmas Vintage feedback'];
     if (fav) lines.push('Favorite: ' + fav);
-    if (fb) lines.push(fb);
+    lines.push(fb);
     if (name) lines.push('— ' + name);
     const body = encodeURIComponent(lines.join('\n\n'));
-    window.location.href = 'sms:+12147555233?&body=' + body;
+    // iOS uses &body, Android uses ?body — the Android form is the safer cross-platform choice
+    const ua = navigator.userAgent || '';
+    const sep = /android/i.test(ua) ? '?' : '&';
+    window.location.href = 'sms:+12147555233' + sep + 'body=' + body;
   });
-
-  // Show success state if redirected back from formsubmit with ?sent=1
-  if (new URLSearchParams(window.location.search).get('sent') === '1') {
-    document.getElementById('formSuccess').classList.add('visible');
-    document.getElementById('feedbackForm').scrollIntoView({behavior: 'smooth', block: 'center'});
-    // Clear the URL param so refresh doesn't keep showing it
-    history.replaceState({}, '', window.location.pathname);
-  }
 })();
 </script>
 
